@@ -5,27 +5,36 @@ import CardPeople from "../components/CardPeople.jsx";
 
 export const Home = () => {
 
-  const {store, dispatch} =useGlobalReducer()
+	const { store, dispatch } = useGlobalReducer()
 
-	function character() {
-		fetch("https://www.swapi.tech/api/people/")
-			.then(res => res.json())
-			.then(data => console.log(data.results))
-			.catch(err => console.error(err))
+	async function character() {
+		const response = await fetch("https://www.swapi.tech/api/people/")
+		const data = await res.json()
+		const personajesBasicos = data.results;
+		dispatch({
+			type: "get_personajes",
+			payload: { personajes: personajesBasicos }
+		});
+
+
 	}
 
 
 
-	useEffect(()=>{
+	useEffect(() => {
 		character()
-	},[])
+	}, [])
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Starwars!</h1>
-			
+			<h1>starwars</h1>
+			{store.character.map(() => {
+				return (
+					<CardPeople key={index} poeple={value} />
+				)
+			})}
 
-			<CardPeople/>
+			<CardPeople />
 
 		</div>
 	);
