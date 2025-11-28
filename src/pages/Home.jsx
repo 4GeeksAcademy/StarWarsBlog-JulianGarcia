@@ -9,8 +9,10 @@ export const Home = () => {
 
 	async function character() {
 		const response = await fetch("https://www.swapi.tech/api/people/")
-		const data = await res.json()
+		const data = await response.json()
 		const personajesBasicos = data.results;
+		console.log(data.results, "data.results");
+		
 		dispatch({
 			type: "get_personajes",
 			payload: { personajes: personajesBasicos }
@@ -24,13 +26,16 @@ export const Home = () => {
 	useEffect(() => {
 		character()
 	}, [])
+console.log(store.character,"character");
 
 	return (
 		<div className="text-center mt-5">
 			<h1>starwars</h1>
-			{store.character.map(() => {
+			
+			{store.character.map((value, index) => {
+
 				return (
-					<CardPeople key={index} poeple={value} />
+					<CardPeople key={index} people={value} />
 				)
 			})}
 
