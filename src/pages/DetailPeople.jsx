@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 
 export const DetailPeople = () => {
     const { uid } = useParams();
-    //necesito estado local 
+    
     const [character, setCharacter] = useState(null)
 
     function detailPeople() {
-        fetch("https://www.swapi.tech/api/people/" + uid)
+        fetch("https://www.swapi.tech/api/people/"+ uid)
             .then(res => res.json())
             .then(data => setCharacter(data.result.properties))
-            .catch(err => console.error(err))
+            
+            .catch(err => console.error(err));      
     }
+   
 
     useEffect(() => {
         detailPeople()
@@ -25,8 +27,12 @@ export const DetailPeople = () => {
     return (
         
             <div className="container">
-                <p>Name: {character?.name}</p>
+                <h1>Name: {character?.name}</h1>
                  <img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/${uid}.jpg`} className="card-img-top" alt="..." />
+                 <p>Gender: {character?.gender}</p>
+                 <p>Eye Color: {character?.eye_color}</p>
+                 <p>Birth date: {character?.birth_year}</p>
+                 <p>Hair Color: {character?.hair_color}</p>
             </div>
         
     );
