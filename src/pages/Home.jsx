@@ -1,6 +1,6 @@
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CardPeople from "../components/CardPeople.jsx";
 import CardPlanets from "../components/CardPlanets.jsx";
 import CardVehicle from "../components/CardVehicle.jsx";
@@ -8,6 +8,8 @@ import CardVehicle from "../components/CardVehicle.jsx";
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
+
+	let [list, setList] = useState([])
 
 	async function character() {
 		const response = await fetch("https://www.swapi.tech/api/people/")
