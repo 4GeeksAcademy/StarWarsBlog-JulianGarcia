@@ -12,7 +12,7 @@ console.log(vehicles);
                 <img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicles/${vehicles.uid}.jpg`} className="card-img-top" alt="..." />
                 <div className="card-body">
                      <h5 className="card-title">Name: {vehicles.name}</h5>
-                     <Link to={`/personaje/${vehicles.uid}`} className="btn btn-primary">Details</Link>
+                     <Link to={`/vehicle/${vehicles.uid}`} className="btn btn-primary">Details</Link>
                      
                 </div>
             </div>
