@@ -16,6 +16,7 @@ export const initialStore = () => {
     character: [],
     planets: [],
     vehiclestore: [],
+    favorites: [],
   }
 }
 
@@ -39,7 +40,7 @@ export default function storeReducer(store, action = {}) {
         ...store, character: personajes
       }
 
-      case "get_planets":
+    case "get_planets":
       const { planets } = action.payload
       console.log(planets, "planetas");
 
@@ -47,7 +48,7 @@ export default function storeReducer(store, action = {}) {
         ...store, planets: planets
       }
 
-       case "get_vehicles":
+    case "get_vehicles":
       const { vehicles } = action.payload
       console.log(vehicles, "vehiculos");
 
@@ -55,10 +56,26 @@ export default function storeReducer(store, action = {}) {
         ...store, vehiclestore: vehicles
       }
 
+    case "add_favorite":
+
+      if (store.favorites.some(fav => fav.uid === action.payload.uid)) {
+        return store;
+      }
+      return {
+        ...store,
+        favorites: [...store.favorites, action.payload]
+      };
+
+    case "remove_favorite":
+      return {
+        ...store,
+        favorites: store.favorites.filter(fav => fav.uid !== action.payload.uid)
+      };
+
     default:
       throw Error('Unknown action.');
 
 
-      
+
   }
 }

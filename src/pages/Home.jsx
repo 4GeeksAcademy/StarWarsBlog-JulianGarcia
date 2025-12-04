@@ -9,13 +9,11 @@ export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	let [list, setList] = useState([])
-
 	async function character() {
 		const response = await fetch("https://www.swapi.tech/api/people/")
 		const data = await response.json()
 		const personajesBasicos = data.results;
-		console.log(data.results, "data.results");
+
 
 		dispatch({
 			type: "get_personajes",
@@ -29,7 +27,7 @@ export const Home = () => {
 		const response = await fetch("https://www.swapi.tech/api/planets/")
 		const dataplanets = await response.json()
 		const planetas = dataplanets.results;
-		console.log(dataplanets.results, "data.results");
+
 
 		dispatch({
 			type: "get_planets",
@@ -43,7 +41,7 @@ export const Home = () => {
 		const response = await fetch("https://www.swapi.tech/api/vehicles/")
 		const datavehicles = await response.json()
 		const vehicles = datavehicles.results;
-		console.log(datavehicles.results, "data.results");
+
 
 		dispatch({
 			type: "get_vehicles",
@@ -60,8 +58,12 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Starwars Content</h1>
+			<h1 className="title">Starwars Content</h1>
+			<div>
+				<h1 className="d-flex justify-content-start ms-3">Characters</h1>
+			</div>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">
+
 				{store.character && store.character.length > 0 && store.character.map((value, index) => {
 
 					return (
@@ -69,7 +71,11 @@ export const Home = () => {
 					)
 				})}
 			</div>
+			<div className="mt-4">
+				<h1 className="d-flex justify-content-start ms-3">Planets</h1>
+			</div>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">
+
 				{store.planets.map((value, index) => {
 
 					return (
@@ -77,7 +83,11 @@ export const Home = () => {
 					)
 				})}
 			</div>
+			<div className="mt-4">
+				<h1 className="d-flex justify-content-start ms-3">Vehicles</h1>
+			</div>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">
+
 				{store.vehiclestore.map((value, index) => {
 
 					return (

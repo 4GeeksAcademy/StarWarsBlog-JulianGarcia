@@ -6,17 +6,17 @@ import { useEffect, useState } from "react";
 
 export const DetailVehicles = () => {
     const { uid } = useParams();
-    
+
     const [vehicle, setVehicle] = useState(null)
 
     function detailVehicle() {
-        fetch("https://www.swapi.tech/api/vehicles/"+ uid)
+        fetch("https://www.swapi.tech/api/vehicles/" + uid)
             .then(res => res.json())
             .then(data => setVehicle(data.result.properties))
-            
-            .catch(err => console.error(err));      
+
+            .catch(err => console.error(err));
     }
-   
+
 
     useEffect(() => {
         detailVehicle()
@@ -25,16 +25,70 @@ export const DetailVehicles = () => {
 
 
     return (
-        
-            <div className="container">
-                <h1>Name: {vehicle?.name}</h1>
-                 <img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicles/${uid}.jpg`} className="card-img-top" alt="..." />
-                 <p>Cargo Capacity: {vehicle?.cargo_capacity}</p>
-                 <p>Consumables: {vehicle?.consumables}</p>
-                 <p>Cost in Credits: {vehicle?.cost_in_credits}</p>
-                 <p>Crew: {vehicle?.crew}</p>
-                 <p>Model: {vehicle?.model}</p>
+
+        <div className="container my-5">
+
+
+            <div className="row align-items-center mb-4">
+
+
+                <div className="col-md-6">
+                    <img
+                        src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicles/${uid}.jpg`}
+                        className="img-fluid rounded"
+                        alt={vehicle?.name}
+                    />
+                </div>
+
+                <div className="col-md-6 text-center">
+                    <h1 className="fw-bold">{vehicle?.name}</h1>
+                    <p className="text-muted px-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla facilisi. Suspendisse at ultrices leo. Sed sit amet
+                        pharetra libero, et maximus nibh.
+                    </p>
+                </div>
+
             </div>
-        
+
+
+            <hr style={{ borderTop: "2px solid red" }} />
+
+            {/* INFO GRID */}
+            <div className="row text-center text-danger fw-bold mt-3">
+
+                <div className="col">
+                    <p>Name</p>
+                    <p className="text-dark fw-normal">{vehicle?.name}</p>
+                </div>
+
+                <div className="col">
+                    <p>Model</p>
+                    <p className="text-dark fw-normal">{vehicle?.model}</p>
+                </div>
+
+                <div className="col">
+                    <p>Cargo Capacity</p>
+                    <p className="text-dark fw-normal">{vehicle?.cargo_capacity}</p>
+                </div>
+
+                <div className="col">
+                    <p>Crew</p>
+                    <p className="text-dark fw-normal">{vehicle?.crew}</p>
+                </div>
+
+                <div className="col">
+                    <p>Cost (Credits)</p>
+                    <p className="text-dark fw-normal">{vehicle?.cost_in_credits}</p>
+                </div>
+
+                <div className="col">
+                    <p>Consumables</p>
+                    <p className="text-dark fw-normal">{vehicle?.consumables}</p>
+                </div>
+
+            </div>
+        </div>
+
     );
 };
