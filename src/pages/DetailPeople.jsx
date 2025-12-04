@@ -43,7 +43,7 @@ export const DetailPeople = () => {
                 
                 <div className="col-md-6 text-center">
                     <h1 className="fw-bold">{character?.name}</h1>
-                    <p className="text-muted px-4">
+                    <p className="text-light px-4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
@@ -59,27 +59,27 @@ export const DetailPeople = () => {
 
                 <div className="col">
                     <p>Name</p>
-                    <p className="text-dark fw-normal">{character?.name}</p>
+                    <p className="text-light fw-normal">{character?.name}</p>
                 </div>
 
                 <div className="col">
                     <p>Gender</p>
-                    <p className="text-dark fw-normal">{character?.gender}</p>
+                    <p className="text-light fw-normal">{character?.gender}</p>
                 </div>
 
                 <div className="col">
                     <p>Eye Color</p>
-                    <p className="text-dark fw-normal">{character?.eye_color}</p>
+                    <p className="text-light fw-normal">{character?.eye_color}</p>
                 </div>
 
                 <div className="col">
                     <p>Birth Year</p>
-                    <p className="text-dark fw-normal">{character?.birth_year}</p>
+                    <p className="text-light fw-normal">{character?.birth_year}</p>
                 </div>
 
                 <div className="col">
                     <p>Hair Color</p>
-                    <p className="text-dark fw-normal">{character?.hair_color}</p>
+                    <p className="text-light fw-normal">{character?.hair_color}</p>
                 </div>
 
             </div>

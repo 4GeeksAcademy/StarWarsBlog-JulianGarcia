@@ -1,9 +1,35 @@
 body {
     font-family: "Oswald", sans-serif;
-    background-blend-mode: color-burn;
+    background: black url("https://raw.githubusercontent.com/alphapixels/star-bg/main/stars-small.png") repeat;
 }
+
+h1 {
+    color:rgb(210, 210, 0)
+}
+
+
 
 .title {
     font-size: 60px;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;  
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #ffc107;   
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffdd57;   
+}

@@ -42,7 +42,7 @@ export const DetailVehicles = () => {
 
                 <div className="col-md-6 text-center">
                     <h1 className="fw-bold">{vehicle?.name}</h1>
-                    <p className="text-muted px-4">
+                    <p className="text-light px-4">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla facilisi. Suspendisse at ultrices leo. Sed sit amet
                         pharetra libero, et maximus nibh.
@@ -59,32 +59,32 @@ export const DetailVehicles = () => {
 
                 <div className="col">
                     <p>Name</p>
-                    <p className="text-dark fw-normal">{vehicle?.name}</p>
+                    <p className="text-light fw-normal">{vehicle?.name}</p>
                 </div>
 
                 <div className="col">
                     <p>Model</p>
-                    <p className="text-dark fw-normal">{vehicle?.model}</p>
+                    <p className="text-light fw-normal">{vehicle?.model}</p>
                 </div>
 
                 <div className="col">
                     <p>Cargo Capacity</p>
-                    <p className="text-dark fw-normal">{vehicle?.cargo_capacity}</p>
+                    <p className="text-light fw-normal">{vehicle?.cargo_capacity}</p>
                 </div>
 
                 <div className="col">
                     <p>Crew</p>
-                    <p className="text-dark fw-normal">{vehicle?.crew}</p>
+                    <p className="text-light fw-normal">{vehicle?.crew}</p>
                 </div>
 
                 <div className="col">
                     <p>Cost (Credits)</p>
-                    <p className="text-dark fw-normal">{vehicle?.cost_in_credits}</p>
+                    <p className="text-light fw-normal">{vehicle?.cost_in_credits}</p>
                 </div>
 
                 <div className="col">
                     <p>Consumables</p>
-                    <p className="text-dark fw-normal">{vehicle?.consumables}</p>
+                    <p className="text-light fw-normal">{vehicle?.consumables}</p>
                 </div>
 
             </div>
