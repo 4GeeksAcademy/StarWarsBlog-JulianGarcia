@@ -11,13 +11,14 @@ const StoreContext = createContext()
 export function StoreProvider({ children }) {
     // Initialize reducer with the initial state.
     const [store, dispatch] = useReducer(storeReducer, initialStore())
-       const addFavorite = (item) => {
+    const addFavorite = (item) => {
         dispatch({
             type: "add_favorite",
             payload: item
         });
     };
-     const removeFavorite = (uid, type) => {
+    
+    const removeFavorite = (uid, type) => {
         dispatch({
             type: "remove_favorite",
             payload: { uid, type }

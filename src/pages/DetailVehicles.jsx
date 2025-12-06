@@ -54,7 +54,7 @@ export const DetailVehicles = () => {
 
             <hr style={{ borderTop: "2px solid red" }} />
 
-            {/* INFO GRID */}
+           
             <div className="row text-center text-danger fw-bold mt-3">
 
                 <div className="col">

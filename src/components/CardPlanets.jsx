@@ -4,7 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 
 const CardPlanets = ({ planets }) => {
     const { store, dispatch, addFavorite, removeFavorite } = useGlobalReducer()
-    const isFav = store.favorites.some(f => f.uid === planets.uid && f.type === "planeta");
+    const isFav = store.favorites.some(fav => fav.uid === planets.uid && fav.type === "planeta");
 
 
     return (

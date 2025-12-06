@@ -40,7 +40,7 @@ export const DetailPlanets = () => {
                 />
             </div>
 
-            {/* RIGHT TEXT */}
+            
             <div className="col-md-6 text-center">
                 <h1 className="fw-bold">{planet?.name}</h1>
                 <p className="text-light px-4">

@@ -4,7 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 
 const CardPeople = ({ people }) => {
      const { store, dispatch, addFavorite, removeFavorite } = useGlobalReducer()
-       const isFav = store.favorites.some(f => f.uid === people.uid && f.type === "personaje");
+       const isFav = store.favorites.some(fav => fav.uid === people.uid && fav.type === "personaje");
     
 
 
@@ -18,8 +18,7 @@ const CardPeople = ({ people }) => {
 
 
                     <Link to={`/personaje/${people.uid}`} className="btn btn-warning me-4 mt-3">Details</Link>
-                    <button
-                        className="btn btn-outline-warning rounded-circle ms-3 mt-3"
+                    <button className="btn btn-outline-warning rounded-circle ms-3 mt-3"
                         onClick={() =>
                             isFav
                                 ? removeFavorite(people.uid)
