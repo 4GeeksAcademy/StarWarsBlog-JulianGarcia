@@ -4,7 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 
 const CardPeople = ({ people }) => {
      const { store, dispatch, addFavorite, removeFavorite } = useGlobalReducer()
-       const isFav = store.favorites.some(f => f.uid === people.uid);
+       const isFav = store.favorites.some(f => f.uid === people.uid && f.type === "personaje");
     
 
 

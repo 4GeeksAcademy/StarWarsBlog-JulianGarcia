@@ -17,10 +17,10 @@ export function StoreProvider({ children }) {
             payload: item
         });
     };
-     const removeFavorite = (uid) => {
+     const removeFavorite = (uid, type) => {
         dispatch({
             type: "remove_favorite",
-            payload: { uid }
+            payload: { uid, type }
         });
     };
     // Provide the store and dispatch method to all child components.
